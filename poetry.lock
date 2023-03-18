@@ -1,0 +1,15 @@
+[[package]]
+name = "autocorrect"
+version = "2.6.1"
+description = "Spelling Corrector"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.10"
+content-hash = "0abcf6f55286b7f49cee6f0431ad5d71d14eae04a6cfb5fde6d6d84883374385"
+
+[metadata.files]
+autocorrect = []
