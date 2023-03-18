@@ -1,3 +1,4 @@
+import django
 from autocorrect import Speller
 from ScrapeSearchEngine.SearchEngine import Google
 from webpage_reader import analyse, read_page
