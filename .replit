@@ -20,7 +20,7 @@ POETRY_CACHE_DIR = "${HOME}/${REPL_SLUG}/.cache/pypoetry"
 
 # Enable unit tests. This is only supported for a few languages.
 [unitTest]
-language = "python3", "HTML", "CSS"
+language = ["python3", "HTML", "CSS"]
 
 # Add a debugger!
 [debugger]
