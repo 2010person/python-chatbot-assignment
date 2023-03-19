@@ -1,3 +1,3 @@
 # Commits not welcome, sorry this is a school project
-# It is a chatbot-website, feel free to [view](https://python-chatbot-assignment.programmerthe.repl.co/) 
+# It is a chatbot-website, feel free to view 
 # But it isn't finished yet...
