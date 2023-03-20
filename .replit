@@ -1,4 +1,4 @@
-run = "python askit.py"
+run = "python chatting.py"
 
 [nix]
 channel = "stable-22_11"
