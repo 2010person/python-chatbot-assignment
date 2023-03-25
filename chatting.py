@@ -65,7 +65,7 @@ def four():
 def main():
     global chat, num, user
     if num == 0:
-        print("Hello", user, "I am MarkChat, your helpful chatting assistant, I will be taking you through my 4 questions. Please ensure accurate use of the English language. ")
+        print("Hello", user, "I am MarkChat, your helpful chatting assistant, I will be taking you through my 4 questions. Please ensure accurate use of the English language. Enter 'be quiet' to stop talking to me. ")
         num = num + 1
         main()
     elif num == 1:
