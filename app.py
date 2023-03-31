@@ -9,7 +9,6 @@ def index():
 
 @app.route("/chatwithai", methods=["POST", "GET"])
 def chatwithai():
-
     openai.api_key = "OPENAIAPIKEY"
 
     prompt = request.form['prompt']
