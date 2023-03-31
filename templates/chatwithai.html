@@ -5,9 +5,13 @@
 </head>
 <body>
     <h1>Below you will be able to chat with ChatGPT</h1>
-    <form action="/" method="POST">
-        <input type="text" name="content" id="content">
-        <input type="submit" value="Add Task">
-    </form>
-    <p method="GET" id="reply_content"></p>
+    <div class="container">
+        <h1>Chat with AI</h1>
+        <form action="/chat" method="post">
+            <div class="form-group">
+                <label for="prompt">Your message:</label>
+                <input type="text" class="form-control" name="prompt" id="prompt" placeholder="Type your message here">
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+    <p>{{ message }}</p>
 </body>

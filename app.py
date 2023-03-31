@@ -1,10 +1,7 @@
 from flask import Flask, request, render_template
-from flask_sqlalchemy import SQLAlchemy
 import openai
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-db = SQLAlchemy(app)
 
 @app.route("/")
 def index():
@@ -12,25 +9,21 @@ def index():
 
 @app.route("/chatwithai", methods=["POST", "GET"])
 def chatwithai():
-    global content
+    openai.api_key = "OPENAIAPIKEY"
 
-    if request.method == 'POST':
-        content = request.form["content"]
-
-    openai.api_key = "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"
-
-    response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[
-            {"role": "system", "content": "You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible. Knowledge cutoff: {27/3/23} Current date: {26/3/23}"},
-            {"role": "user", "content": content},
-            {"role": "assistant", "content": "Hi user, your question delights me the answer is:"},
-        ]
+    prompt = request.form['prompt']
+    response = openai.Completion.create(
+        engine="davinci",
+        prompt=prompt,
+        max_tokens=2048,
+        n=1,
+        stop=None,
+        temperature=0.5,
     )
 
-    reply_content = response['choices'][0]['message']['content']
+    message = {'user': prompt, 'ai': response.choices[0].text}
 
-    return render_template("chatwithai.html")
+    return render_template('index.html', message=message)
 
 if __name__ == "__main__":
     app.run(debug=False)
