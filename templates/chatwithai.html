@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>Chatting with ChatGPT</title>
+    <link rel="stylesheet", href="/static/css/chatwithai.css">
+</head>
+<body>
+    <h1>Below you will be able to chat with ChatGPT</h1>
+    <div class="container">
+        <h1>Chat with AI</h1>
+        <form action="/chatwithai" method="POST">
+            <input type="text" name="text_input">
+            <input type="submit" value="Submit">
+        </form>
+    <h3>What you said:</h3>
+    <p>{{ user }}</p>
+    <h3>What the AI responded:</h3>
+    <p>{{ ai }}</p>
+</body>
