@@ -7,11 +7,12 @@
     <h1>Below you will be able to chat with ChatGPT</h1>
     <div class="container">
         <h1>Chat with AI</h1>
-        <form action="/chat" method="post">
-            <div class="form-group">
-                <label for="prompt">Your message:</label>
-                <input type="text" class="form-control" name="prompt" id="prompt" placeholder="Type your message here">
-            </div>
-            <button type="submit" class="btn btn-primary">Send</button>
-    <p>{{ message }}</p>
+        <form action="/chatwithai" method="POST">
+            <input type="text" name="text_input">
+            <input type="submit" value="Submit">
+        </form>
+    <h3>What you said:</h3>
+    <p>{{ user }}</p>
+    <h3>What the AI responded:</h3>
+    <p>{{ ai }}</p>
 </body>

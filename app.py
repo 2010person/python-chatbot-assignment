@@ -9,21 +9,26 @@ def index():
 
 @app.route("/chatwithai", methods=["POST", "GET"])
 def chatwithai():
-    openai.api_key = "OPENAIAPIKEY"
 
-    prompt = request.form['prompt']
-    response = openai.Completion.create(
-        engine="davinci",
-        prompt=prompt,
-        max_tokens=2048,
-        n=1,
-        stop=None,
-        temperature=0.5,
-    )
+    if request.method == "POST":
+        openai.api_key = "OPENAIAPIKEY"
 
-    message = {'user': prompt, 'ai': response.choices[0].text}
+        prompt = request.form.get("text_input")
 
-    return render_template('index.html', message=message)
+        params = {
+            "temperature": 0.5,
+            "max_tokens": 100,
+            "top_p": 1,
+            "frequency_penalty": 0,
+            "presence_penalty": 0
+        }
 
-if __name__ == "__main__":
-    app.run(debug=False)
+        response = openai.Completion.create(engine="davinci", prompt=prompt, **params)
+
+        user_question = prompt
+        ai_response = response.choices[0].text.strip()
+ 
+        return render_template("chatwithai.html", user=user_question, ai=ai_response)
+
+    else:
+        return render_template('chatwithai.html')
