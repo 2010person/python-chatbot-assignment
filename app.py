@@ -27,8 +27,7 @@ def chatwithai():
 
         user_question = prompt
         ai_response = response.choices[0].text.strip()
-
-
+ 
         return render_template("chatwithai.html", user=user_question, ai=ai_response)
 
     else:
