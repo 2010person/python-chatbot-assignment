@@ -1,0 +1,19 @@
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color:rgb(67, 161, 13)
+}
+
+.askit {
+    color: rgba(172, 10, 45, 0.301);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.chatting {
+    color: rgb(238, 118, 6);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.chatwithai {
+    color: rgba(9, 135, 167, 0.808);
+    font-family: cursive;
+}

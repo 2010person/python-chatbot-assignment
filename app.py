@@ -1,5 +1,9 @@
 from flask import Flask, request, render_template
+from ScrapeSearchEngine.ScrapeSearchEngine import Google
+from bs4 import BeautifulSoup
 import openai
+import os
+import requests
 
 app = Flask(__name__)
 
@@ -11,7 +15,7 @@ def index():
 def chatwithai():
 
     if request.method == "POST":
-        openai.api_key = "OPENAIAPIKEY"
+        openai.api_key = os.environ("OPENAAIAPIKEY")
 
         prompt = request.form.get("text_input")
 
@@ -32,3 +36,20 @@ def chatwithai():
 
     else:
         return render_template('chatwithai.html')
+    
+@app.route("/askit", methods=["POST", "GET"])
+def askit():
+    if request.method == "POST":
+        chat = request.form.get("text_input")
+        # The command below searches google
+        gg_searched = Google(chat, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0  x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.0.0")
+        # Below we analyze the webpages that has been found on Google
+        thing = gg_searched[0]
+        PAGE = requests.get(thing)
+        SOUP = BeautifulSoup(PAGE.text, 'html.parser')
+        text = SOUP.get_text()
+
+        return render_template("askit.html", user=chat, scrape=text)
+    
+    else:
+        return render_template("askit.html")
