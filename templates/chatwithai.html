@@ -5,9 +5,14 @@
 </head>
 <body>
     <h1>Below you will be able to chat with ChatGPT</h1>
-    <form action="/" method="POST">
-        <input type="text" name="content" id="content">
-        <input type="submit" value="Add Task">
-    </form>
-    <p method="GET" id="reply_content"></p>
+    <div class="container">
+        <h1>Chat with AI</h1>
+        <form action="/chatwithai" method="POST">
+            <input type="text" name="text_input">
+            <input type="submit" value="Submit">
+        </form>
+    <h3>What you said:</h3>
+    <p>{{ user }}</p>
+    <h3>What the AI responded:</h3>
+    <p>{{ ai }}</p>
 </body>
