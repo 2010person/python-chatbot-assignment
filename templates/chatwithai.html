@@ -4,15 +4,19 @@
     <link rel="stylesheet", href="/static/css/chatwithai.css">
 </head>
 <body>
-    <h1>Below you will be able to chat with ChatGPT</h1>
-    <div class="container">
-        <h1>Chat with AI</h1>
-        <form action="/chatwithai" method="POST">
-            <input type="text" name="text_input">
-            <input type="submit" value="Submit">
-        </form>
-    <h3>What you said:</h3>
+    <h1>Below you will be able to chat with my own instance of ChatGPT</h1>
+    <h2>Warning! AI seems to be massively unrealiable when you ask it something about itself. Do not trust it! You have been warned!</h2>
+    <form action="/chatwithai" method="POST">
+        <input type="text" name="text_input">
+        <input type="submit" value="Submit">
+    </form>
+    <h3 class="you">What you said:</h3>
     <p>{{ user }}</p>
-    <h3>What the AI responded:</h3>
+    <h3 class="ai">What the AI responded:</h3>
     <p>{{ ai }}</p>
+    <br>
+    <br>
+    <h5>Powered by</h5>
+    <img src="https://yt3.googleusercontent.com/UqT_vCkJIn1P2fH1pchr6lbe3xeEekY61h4bUpJkVuityqKOEtUYcNy3pLiJ5OKdj4uKA81FWE8=s176-c-k-c0x00ffffff-no-rj">
+    <h4>OpenAI</h4>
 </body>

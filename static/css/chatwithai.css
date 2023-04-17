@@ -1,0 +1,25 @@
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    color: crimson;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h3 {
+    color: blue;
+}
+
+.you {
+    color: blue;
+}
+
+.ai {
+    color:cornflowerblue
+}
+
+
+h5 {
+    align-content: flex-end;
+}
