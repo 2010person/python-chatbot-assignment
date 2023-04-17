@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scraping the web</title>
+        <link rel="stylesheet", href="/static/css/askit.css">
+    </head>
+    <body>
+        <h1>Hello welcome to this web scraper that I have made</h1>
+        <h2>Warning! Third-party websites may have incorrect information.</h2>
+        <form action="/askit" method="POST">
+            <input type="text" name="text_input">
+            <input type="submit" value="Submit">
+        </form>
+        <h3 class="you">What you said:</h3>
+        <p class="you">{{ user }}</p>
+        <h3 class="scrape">What I managed to scrape:</h3>
+        <p class="scrape">{{ scrape }}</p>
+        <h5>Powered by</h5>
+        <img src="{{ url_for('static', filename='alphabet.png') }}", width="500", height="100">
+        <h4>Alphabet Inc</h4>
+    </body>
+</html>
