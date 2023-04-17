@@ -1,0 +1,29 @@
+h1 {
+    color: rgb(60, 13, 136);
+}
+
+h2 {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3.you {
+    color: rgba(143, 201, 68, 0.336);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p.you {
+    color:rgba(143, 201, 68, 0.336);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h3.scrape {
+    color:rgba(6, 209, 142, 0.664);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p.scrape {
+    color: rgba(6, 209, 142, 0.664);
+    font-family: 'Times New Roman', Times, serif;
+    margin: 10px;
+}

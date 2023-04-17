@@ -15,7 +15,7 @@ def index():
 def chatwithai():
 
     if request.method == "POST":
-        openai.api_key = os.environ("OPENAAIAPIKEY")
+        openai.api_key = os.getenv("OPENAIAPIKEY")
 
         prompt = request.form.get("text_input")
 
@@ -53,3 +53,4 @@ def askit():
     
     else:
         return render_template("askit.html")
+    
