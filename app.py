@@ -55,8 +55,14 @@ def askit():
     else:
         return render_template("askit.html")
     
-if __name__ == '__main__':
-    create_app = create_app()
-    create_app.run()
-else:
-    gunicorn_app = create_app()    
+def create_app(app_name="python-chatbot-assignment"):
+  app = Flask(app_name)
+  app.config.from_object('api.config.DevelopmentConfig')
+
+  from api.api import api
+  app.register_blueprint(api, url_prefix='/api')
+
+  from api.models import db
+  db.init_app(app)
+
+  return app
