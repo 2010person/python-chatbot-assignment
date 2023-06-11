@@ -1,4 +1,3 @@
-from api.application import create_app
 from flask import Flask, request, render_template
 from ScrapeSearchEngine.ScrapeSearchEngine import Google
 from bs4 import BeautifulSoup
